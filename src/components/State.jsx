@@ -1,0 +1,48 @@
+import { CookingPot, Heater, ScrollText } from 'lucide-react';
+import React from 'react';
+
+const State = () => {
+    return (
+        <div className='py-8 grid grid-cols-1 md:grid-cols-3 gap-5'>
+
+            {/* total order */}
+
+            <div className="border-4 border-dotted rounded-2xl border-amber-500 p-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between">
+        <ScrollText className="animate-pulse" color="#fcb700" size={100} />
+        <div className="text-xl text-center">
+          Current Orders
+          <h2 className="text-6xl font-bold">{0}</h2>
+        </div>
+      </div>
+    </div>
+            {/* total Cooking */}
+
+            <div className="border-4 border-dotted rounded-2xl border-amber-500 p-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between">
+        
+        <Heater className="animate-pulse" color="#fcb700" size={100}/>
+        <div className="text-xl text-center">
+          Current Cooking
+          <h2 className="text-6xl font-bold">{0}</h2>
+        </div>
+      </div>
+    </div>
+            {/* Order ready */}
+
+            <div className="border-4 border-dotted rounded-2xl border-amber-500 p-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between">
+       
+        <CookingPot className="animate-pulse" color="#fcb700" size={100}/>
+        <div className="text-xl text-center">
+          Order ready
+          <h2 className="text-6xl font-bold">{0}</h2>
+        </div>
+      </div>
+    </div>
+            
+        </div>
+    );
+};
+
+export default State;

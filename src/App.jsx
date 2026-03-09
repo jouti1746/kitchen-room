@@ -1,6 +1,7 @@
 import "./App.css";
 import Heading from "./components/Heading";
 import Navbar from "./components/Navbar";
+import State from "./components/State";
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
         <Heading>
           Kitchen Room
         </Heading>
+      </section>
+
+      <section>
+        <State></State>
       </section>
     </div>
   );
