@@ -1,24 +1,28 @@
+import { Suspense } from "react";
 import "./App.css";
 import Heading from "./components/Heading";
 import Navbar from "./components/Navbar";
-import State from "./components/State";
+import OrderContainer from "./components/OrderContainer";
+
+const loadOrders = fetch("/orders.json")
+.then((res) => res.json());
 
 function App() {
-  return (
+  
+  
+  return ( 
     <div>
       <header>
         <Navbar></Navbar>
       </header>
 
       <section className="py-8">
-        <Heading>
-          Kitchen Room
-        </Heading>
+        <Heading>Kitchen Room</Heading>
       </section>
 
-      <section>
-        <State></State>
-      </section>
+      <Suspense fallback= {<p>Loading...</p>}>
+       <OrderContainer loadOrders= {loadOrders}></OrderContainer>
+      </Suspense>
     </div>
   );
 }
